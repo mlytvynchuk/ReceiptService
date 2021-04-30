@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Receipt Upload</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Receipt Upload</h1>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group files color">
+                    <input type="file" class="form-control" multiple="" name="receipt_file" required>
+                    {% csrf_token %}
+                </div>
+                <input type="submit" class="btn btn-danger" name="submit" value="Upload"/>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            {% if json_data %}
+                <br>
+                <h2 class="text-center">Result json</h2>
+                <textarea name="receipt_json_data" id="receipt_json_data" cols="30" rows="10"
+                          class="form-control">{{ json_data }}</textarea>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
