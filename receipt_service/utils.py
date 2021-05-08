@@ -1,4 +1,4 @@
-def get_json_data_from_receipt(receipt_file) -> dict:
+def get_json_data_from_receipt(image_path) -> dict:
     # TODO: Implement a function
     return {
         "name": "McDonalds",
