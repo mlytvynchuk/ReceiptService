@@ -128,3 +128,5 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MINDEE_TOKEN = os.getenv('MINDEE_TOKEN')
