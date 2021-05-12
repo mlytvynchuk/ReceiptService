@@ -6,7 +6,7 @@ def get_json_data_from_receipt(image_path) -> dict:
     client = Client(settings.MINDEE_TOKEN)
     receipt = client.parse_receipt(image_path).receipt
     data = {
-        'amount': receipt.total_incl.value,
+        'total': receipt.total_incl.value,
         'category': receipt.category.value,
         'merchant_name': receipt.merchant_name.value,
         'date': receipt.date.value,
